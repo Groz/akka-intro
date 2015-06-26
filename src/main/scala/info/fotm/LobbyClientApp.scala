@@ -4,7 +4,7 @@ import akka.actor.{Props, ActorSystem, ActorRef, Actor}
 import akka.event.LoggingReceive
 
 class LobbyClient(name: String) extends Actor {
-  val lobby = context.actorSelection("akka.tcp://Main@130.211.85.198:45000/user/app")
+  val lobby = context.actorSelection("akka.tcp://Main@10.240.245.124:45000/user/app")
   lobby ! Lobby.Announce(name)
 
   def receive: Receive = LoggingReceive {
