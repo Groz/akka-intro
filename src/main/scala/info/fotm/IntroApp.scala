@@ -47,8 +47,7 @@ class LobbyClient extends Actor {
 class LobbyApp extends Actor {
 
   val lobby = context.actorOf(Props[Lobby], "lobby")
-  println(self)
-  println(lobby)
+  lobby ! Lobby.Start
 
   def receive: Receive = LoggingReceive {
     case msg => println(msg)
